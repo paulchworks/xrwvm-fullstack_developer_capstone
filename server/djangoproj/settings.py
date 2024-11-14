@@ -27,9 +27,8 @@ SECRET_KEY =\
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = ['localhost',
- 'https://paulchowkums-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai']
+HOST = 'https://paulchowkums-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai'
+ALLOWED_HOSTS = ['localhost', HOST]
 CSRF_TRUSTED_ORIGINS = [
     'https://paulchowkums-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai']
 
