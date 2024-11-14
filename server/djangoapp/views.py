@@ -5,6 +5,7 @@
 from django.contrib.auth.models import User
 # from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth import logout
+from .restapis import get_request, analyze_review_sentiments, post_review, searchcars_request
 # from django.contrib import messages
 # from datetime import datetime
 
@@ -79,10 +80,10 @@ def registration(request):
                                         email=email)
         # Login the user and redirect to list page
         login(request, user)
-        data = {"userName": username,"status": "Authenticated"}
+        data = {"userName": username, "status": "Authenticated"}
         return JsonResponse(data)
     else:
-        data = {"userName": username,"error": "Already Registered"}
+        data = {"userName": username, "error": "Already Registered"}
         return JsonResponse(data)
 
 
@@ -139,8 +140,6 @@ def add_review(request):
     else:
         return JsonResponse({"status": 403, "message": "Unauthorized"})
 
-# Module import
-from .restapis import get_request, analyze_review_sentiments, post_review, searchcars_request
 
 # Get the inventory of a specific dealer
 def get_inventory(request, dealer_id):
