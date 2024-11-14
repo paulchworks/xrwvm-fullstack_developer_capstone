@@ -5,7 +5,8 @@
 from django.contrib.auth.models import User
 # from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth import logout
-from .restapis import get_request, analyze_review_sentiments, post_review, searchcars_request
+from .restapis import get_request, analyze_review_sentiments,
+post_review, searchcars_request
 # from django.contrib import messages
 # from datetime import datetime
 
@@ -157,7 +158,7 @@ def get_inventory(request, dealer_id):
             endpoint = "/carsbyprice/"+str(dealer_id)+"/"+data['price']
         else:
             endpoint = "/cars/"+str(dealer_id)
- 
+
         cars = searchcars_request(endpoint)
         return JsonResponse({"status": 200, "cars": cars})
     else:
