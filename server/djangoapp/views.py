@@ -5,8 +5,7 @@
 from django.contrib.auth.models import User
 # from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth import logout
-from .restapis import get_request, analyze_review_sentiments
-from .restapis import post_review, searchcars_request
+from .restapis import searchcars_request
 # from django.contrib import messages
 # from datetime import datetime
 
@@ -130,9 +129,9 @@ def get_dealer_details(request, dealer_id):
 # def add_review(request):
 def add_review(request):
     if request.user.is_anonymous is False:
-        data = json.loads(request.body)
+        # data = json.loads(request.body)
         try:
-            response = post_review(data)
+            # response = post_review(data)
             return JsonResponse({"status": 200})
         except Exception as err:
             return JsonResponse(
