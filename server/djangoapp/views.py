@@ -79,11 +79,12 @@ def registration(request):
                                         email=email)
         # Login the user and redirect to list page
         login(request, user)
-        data = {"userName":username,"status":"Authenticated"}
+        data = {"userName": username,"status": "Authenticated"}
         return JsonResponse(data)
-    else :
-        data = {"userName":username,"error":"Already Registered"}
+    else:
+        data = {"userName": username,"error": "Already Registered"}
         return JsonResponse(data)
+
 
 # # Update the `get_dealerships` view to render the index page with
 # a list of dealerships
@@ -129,12 +130,12 @@ def add_review(request):
     if request.user.is_anonymous is False:
         data = json.loads(request.body)
         try:
-            # response = post_review(data)
+            response = post_review(data)
             return JsonResponse({"status": 200})
         except Exception as err:
             return JsonResponse(
-                {"status": 401, "message": ("Error in posting review: " + str(err))}
-            )
+                {"status": 401, "message":
+                 ("Error in posting review: " + str(err))})
     else:
         return JsonResponse({"status": 403, "message": "Unauthorized"})
 
