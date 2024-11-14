@@ -1,7 +1,7 @@
 import requests  # Import the requests library to handle HTTP requests
 
 
-def sentiment_analyzer(text_to_analyse): 
+def sentiment_analyzer(text_to_analyse):
     url = 'https://sn-watson-sentiment-bert.labs.skills.network/v1/watson.\
     runtime.nlp.v1/NlpService/SentimentPredict'
     myobj = {"raw_document": {"text": text_to_analyse}}
