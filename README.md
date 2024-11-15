@@ -6,10 +6,10 @@ Open another new terminal, run git clone or pull
 
 Run the following to set up the Django environment:
 
-cd /home/project/xrwvm-fullstack_developer_capstone/server
-pip install virtualenv
-virtualenv djangoenv
-source djangoenv/bin/activate
+cd /home/project/xrwvm-fullstack_developer_capstone/server \
+pip install virtualenv \
+virtualenv djangoenv \
+source djangoenv/bin/activate \
 
 Install the required packages by running the following command:
 
@@ -23,3 +23,7 @@ python3 manage.py runserver
 cd /home/project/xrwvm-fullstack_developer_capstone/server/frontend
 npm install
 npm run build
+
+go to server/database
+docker build -t nodeapp .
+docker-compose up
