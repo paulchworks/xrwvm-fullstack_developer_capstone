@@ -27,3 +27,9 @@ npm run build
 go to server/database\
 docker build -t nodeapp .\
 docker-compose up
+
+Deploy the application
+Create the deployment using the following command and deployment file:
+
+kubectl apply -f deployment.yaml\
+kubectl port-forward deployment.apps/dealership 8000:8000
